@@ -1,0 +1,145 @@
+
+import Mock from "mockjs";
+
+//图表数据
+let List=[]
+export default{
+    getStatisticalData:()=>{
+        for(let i=0;i<7;i++){
+            List.push(
+                Mock.mock({
+                  苹果:Mock.Random.float(100,8000,0,0),
+                  三星:Mock.Random.float(100,8000,0,0),
+                  魅族:Mock.Random.float(100,8000,0,0),
+                  华为:Mock.Random.float(100,8000,0,0),
+                  小米:Mock.Random.float(100,8000,0,0),
+                  vivo:Mock.Random.float(100,8000,0,0),
+                  oppo:Mock.Random.float(100,8000,0,0),
+                })
+            )   
+        }
+        return{
+            code:2000,
+            data:{
+                //饼图
+                videoData:[
+                    {
+                        name:'小米',
+                        value:'2999'
+                    },
+                    {
+                        name:'苹果',
+                        value:'5999'
+                    },
+                    {
+                        name:'三星',
+                        value:'6999'
+                    },
+                    {
+                        name:'华为',
+                        value:'4999'
+                    },
+                    {
+                        name:'vivo',
+                        value:'3999'
+                    },
+                    {
+                        name:'oppo',
+                        value:'3999'
+                    },
+                    {
+                        name:'魅族',
+                        value:'1999'
+                    }
+                ],
+                //柱状图
+                userData:[
+                    {
+                        data:'周一' ,
+                        new:15,
+                        active:200
+                    },
+                    {
+                        data:'周二' ,
+                        new:16,
+                        active:300
+                    },
+                    {
+                        data:'周三' ,
+                        new:13,
+                        active:400
+                    },
+                    {
+                        data:'周四' ,
+                        new:17,
+                        active:600
+                    },
+                    {
+                        data:'周五' ,
+                        new:11,
+                        active:300
+                    },
+                    {
+                        data:'周六' ,
+                        new:12,
+                        active:500
+                    },
+                    {
+                        data:'周日' ,
+                        new:19,
+                        active:900
+                    },
+                ],
+            //折现图
+            orderData:{
+                date:['202202019','202202020','202202021','202202022','202202023','202202024',],
+                data:List
+            },
+            tabledata:[
+                    {
+                        name:'oppo',
+                        todaybuy:100,
+                        monthbuy:200,
+                        totalbuy:300
+                    },
+                    {
+                        name:'vivo',
+                        todaybuy:200,
+                        monthbuy:200,
+                        totalbuy:400
+                    },
+                    {
+                        name:'华为',
+                        todaybuy:300,
+                        monthbuy:400,
+                        totalbuy:700
+                    },
+                    {
+                        name:'三星',
+                        todaybuy:50,
+                        monthbuy:200,
+                        totalbuy:250
+                    },
+                    {
+                        name:'苹果',
+                        todaybuy:300,
+                        monthbuy:300,
+                        totalbuy:300
+                    },
+                    {
+                        name:'小米',
+                        todaybuy:500,
+                        monthbuy:600,
+                        totalbuy:700
+                    },
+                    {
+                        name:'魅族',
+                        todaybuy:500,
+                        monthbuy:700,
+                        totalbuy:700
+                    },
+                ]
+            }
+        }
+    }
+}

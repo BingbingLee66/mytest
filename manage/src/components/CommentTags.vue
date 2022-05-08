@@ -1,0 +1,67 @@
+<template>
+    <div class="tabs">
+        <el-tag 
+            :key="tag.name"
+            v-for="(tag,index) in tags"
+            :closable="tag.name!=='home'"
+            :effect="$route.name===tag.name ? 'dark' :'plain'"
+            @click="changeMenu(tag)"
+            @close="handleClose(tag,index)"
+             size="small"  
+            >
+            {{tag.label}}
+        </el-tag>
+    </div>
+</template>
+<script>
+import {mapState,mapMutations} from 'vuex'
+export default {
+    name:'CommentTag',
+    data(){
+        return{
+
+        }
+    },
+    computed:{
+        ...mapState({
+            tags:state=>state.tab.tabsList
+        })
+    },
+    methods:{
+        ...mapMutations({
+            close:'closetag'
+        }),
+        changeMenu(item){
+            this.$router.push({name:item.name})
+        },
+        handleClose(tag,index){
+            this.close(tag)
+            const length=this.tags.length-1
+            console.log(this.tags)
+            console.log(index)
+            if(tag.name!==this.$route.name){
+                return 
+            }
+            if(index===length){
+                this.$router.push({
+                    name:this.tags[index].name
+                })
+            }else{
+                this.$router.push({
+                    name:this.tags[index-1].name
+                })
+            }
+        }
+    }
+}
+</script>
+<style lang="less" scoped>
+.tabs{
+    padding:20px;
+    .el-tag{
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+}
+</style>

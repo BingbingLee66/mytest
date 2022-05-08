@@ -1,0 +1,8 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(163, 205, 241);
+    background-image: url(./banner1.jpg) ;
+    display: flex;
+ 
+}

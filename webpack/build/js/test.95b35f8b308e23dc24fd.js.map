@@ -1,0 +1,1 @@
+{"version":3,"file":"js/test.95b35f8b308e23dc24fd.js","mappings":"iFAGO,SAASA,EAAIC,EAAEC,GAClB,OAAOD,EAAEC,E,0BAFbC,QAAQC,IAAI,EAAE","sources":["webpack:///./src/test.js"],"sourcesContent":["// import $ from'jquery'\r\n// console.log($)\r\nconsole.log(4,5)\r\nexport function add(x,y){\r\n    return x+y\r\n}"],"names":["add","x","y","console","log"],"sourceRoot":""}
